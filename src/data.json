@@ -1,0 +1,35 @@
+{
+  "customers": [
+    {
+      "id": "0c20d921-9da4-46a5-a54c-0a8959ed0f2a",
+      "name": "Mozart"
+    },
+    {
+      "id": "b72813c7-2184-405a-a67b-fdb0185ab237",
+      "name": "Zefir"
+    }
+  ],
+  "orders": [
+    {
+      "id": "34d9b1cf-77c4-4e00-9650-ffbc3a05283c",
+      "customer_id": "0c20d921-9da4-46a5-a54c-0a8959ed0f2a",
+      "weight": 1.2,
+      "price_per_kilo": 500,
+      "sold_at": "2017-10-28 20:41:29.823 +00:00"
+    },
+    {
+      "id": "4f4c48ef-07eb-41e1-8f86-2fca092b5e74",
+      "customer_id": "b72813c7-2184-405a-a67b-fdb0185ab237",
+      "weight": 1.7,
+      "price_per_kilo": 500,
+      "sold_at": "2017-10-27 20:41:29.823 +00:00"
+    },
+    {
+      "id": "0881c849-0a70-4470-9ed0-833f047674c4",
+      "customer_id": "b72813c7-2184-405a-a67b-fdb0185ab237",
+      "weight": 2,
+      "price_per_kilo": 500,
+      "sold_at": "2017-10-24 20:41:29.823 +00:00"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "bastur-back",
+  "version": "1.0.0",
+  "description": "Backend for Basturma application.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvoJFB/bastur-back.git"
+  },
+  "author": "avojfb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AvoJFB/bastur-back/issues"
+  },
+  "homepage": "https://github.com/AvoJFB/bastur-back#readme",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-body": "^2.5.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.2.1",
+    "pg": "^7.3.0",
+    "sequelize": "^4.19.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1"
+  }
+}

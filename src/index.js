@@ -4,6 +4,7 @@ const logger = require('koa-morgan');
 const bodyParser = require('koa-body');
 const { Order, Customer } = require('./db');
 const v4 = require('uuid/v4');
+require('dotenv').config();
 
 const server = new Koa();
 const router = new Router();
@@ -68,4 +69,4 @@ server
   .use(bodyParser())
   .use(logger('tiny'))
   .use(router.routes())
-  .listen(5000, () => console.log('Listening on port 5000...'));
+  .listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}...`));

@@ -1,7 +1,12 @@
 const Sequelize = require('sequelize');
 const data = require('./data');
+require('dotenv').config();
 
-const db = new Sequelize('postgres://postgres:avetikharut2000@localhost:5432/bastur');
+
+const {
+  DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME,
+} = process.env;
+const db = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`);
 
 const Customer = db.define('customer', {
   id: {

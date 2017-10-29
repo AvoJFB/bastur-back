@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AvoJFB/bastur-back#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",
     "koa-morgan": "^1.0.1",

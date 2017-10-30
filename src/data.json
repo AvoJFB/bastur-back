@@ -2,11 +2,11 @@
   "customers": [
     {
       "id": "0c20d921-9da4-46a5-a54c-0a8959ed0f2a",
-      "name": "Mozart"
+      "name": "Моцарт"
     },
     {
       "id": "b72813c7-2184-405a-a67b-fdb0185ab237",
-      "name": "Zefir"
+      "name": "Зефир"
     }
   ],
   "orders": [

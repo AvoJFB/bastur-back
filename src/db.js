@@ -30,6 +30,11 @@ const Order = db.define('order', {
   price_per_kilo: Sequelize.INTEGER,
   sold_at: Sequelize.DATE,
 }, {
+  getterMethods: {
+    summary() {
+      return this.getDataValue('weight') * this.getDataValue('price_per_kilo');
+    },
+  },
   underscored: true,
 });
 

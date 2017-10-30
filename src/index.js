@@ -2,6 +2,7 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const logger = require('koa-morgan');
 const bodyParser = require('koa-body');
+const cors = require('koa-cors');
 const { Order, Customer } = require('./db');
 const v4 = require('uuid/v4');
 require('dotenv').config();
@@ -15,7 +16,15 @@ router.get('/', (ctx) => {
 
 router.get('/order', async (ctx) => {
   const orders = await Order.findAll({
-    include: Customer,
+    attributes: {
+      exclude: ['created_at', 'updated_at'],
+    },
+    include: [{
+      model: Customer,
+      attributes: {
+        exclude: ['created_at', 'updated_at'],
+      },
+    }],
   });
   ctx.body = {
     orders,
@@ -66,6 +75,7 @@ router.post('/customer', async (ctx) => {
 });
 
 server
+  .use(cors())
   .use(bodyParser())
   .use(logger('tiny'))
   .use(router.routes())

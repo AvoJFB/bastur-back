@@ -32,16 +32,28 @@ router.get('/order', async (ctx) => {
 });
 
 router.post('/order', async (ctx) => {
+  const id = v4();
   const order = {
-    id: v4(),
+    id,
     weight: ctx.request.body.weight,
     price_per_kilo: ctx.request.body.price_per_kilo,
     sold_at: ctx.request.body.sold_at,
     customer_id: ctx.request.body.customer_id,
   };
   await Order.create(order);
+  const createdOrder = await Order.findById(id, {
+    attributes: {
+      exclude: ['created_at', 'updated_at'],
+    },
+    include: [{
+      model: Customer,
+      attributes: {
+        exclude: ['created_at', 'updated_at'],
+      },
+    }],
+  });
   ctx.body = {
-    order,
+    order: createdOrder,
   };
 });
 
